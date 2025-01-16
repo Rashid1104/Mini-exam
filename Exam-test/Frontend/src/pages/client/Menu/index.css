@@ -1,0 +1,26 @@
+.dishes{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    gap: 1rem;
+    transition: all 0.5s;
+}
+.dishes:hover{
+   background-color: #FFB400;
+}
+.img img{
+    border-radius: 50%;
+}
+.texts h3{
+    font-size: 20px;
+}
+.all-dishes{
+    display: flex;
+    gap: 1rem;
+   }
+
+   .price{
+    display: flex;
+    align-items: center;
+   }

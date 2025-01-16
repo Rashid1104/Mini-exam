@@ -1,0 +1,13 @@
+.details-dish{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.details-dish .image{
+    display: flex;
+   
+}
+.image img{
+    width: 100%;
+}

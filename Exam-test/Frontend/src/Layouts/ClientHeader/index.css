@@ -1,0 +1,24 @@
+*{
+    text-decoration: none;
+    list-style: none;
+}
+header{
+margin: 0 auto;
+background-color: #2C2B2A;
+height: 60px;
+}
+ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    
+}
+li{
+}
+a{
+    color: black;
+}
+a.active{
+    color: purple;
+}
