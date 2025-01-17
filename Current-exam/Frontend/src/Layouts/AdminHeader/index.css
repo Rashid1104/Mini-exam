@@ -1,0 +1,12 @@
+.logo-shop {
+    color: red;
+}
+
+.header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: sticky;
+    height: 80px;
+    z-index: 1000;
+}

@@ -1,0 +1,18 @@
+.one {
+    position: relative;
+}
+
+.text-homePart1 {
+    position: absolute;
+    top: 50%;
+
+
+
+}
+
+.btn-shop-now {
+    background-color: #7971EA;
+    padding: 8px 1rem;
+    color: #fff;
+    border: none;
+}

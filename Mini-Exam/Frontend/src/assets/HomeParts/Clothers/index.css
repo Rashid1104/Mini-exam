@@ -1,0 +1,30 @@
+.black-squire {
+    width: 1300px;
+    height: 50vh;
+    border: 5px solid black;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.texts {
+
+    text-align: center;
+}
+
+.Clothers {
+    margin: 0 auto;
+
+}
+
+.info-btn {
+    border-radius: 50%;
+    border: none;
+    background-color: #fff;
+}
+
+.logo-clothers {
+    text-align: center;
+}
