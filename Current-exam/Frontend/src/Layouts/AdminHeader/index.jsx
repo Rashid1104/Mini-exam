@@ -29,7 +29,7 @@ const AdminHeader = () => {
             <div className="other">
                 <button className='btn'><IoSearch /></button>
                 <button className='btn'><FaUser /></button>
-                <button className='btn-cart'><FaShoppingCart /></button>
+                <button className='btn-cart'><NavLink to={"/basket"}><FaShoppingCart /></NavLink></button>  
 
 
             </div>

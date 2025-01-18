@@ -11,11 +11,10 @@ import Basket from './pages/client/Basket'
 import Contacts from './pages/client/Contacts'
 import AdminLayout from './components/AdminLayout'
 import Add from './pages/Admin/Add'
-import Table from './pages/Admin/Table'
 import Dashboard from './pages/Admin/dashboard'
+import TableDish from './pages/Admin/Table'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
@@ -32,7 +31,7 @@ function App() {
       <Route path='/admin' element={<AdminLayout />}>
       <Route index element={<Dashboard />} />
       <Route path='add' element={<Add />} />
-      <Route path='table' element={<Table />} />
+      <Route path='table' element={<TableDish />} />
       </Route>
       <Route path='*' element={<NotFound />} />
      </Routes>

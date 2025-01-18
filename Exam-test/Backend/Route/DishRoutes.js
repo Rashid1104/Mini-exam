@@ -5,7 +5,7 @@ const router = express.Router()
 
 router.get("/",GetAllDishes)
 router.get("/:id",GetDishById)
-router.get("/:id",DeleteDish)
+router.delete("/:id",DeleteDish)
 router.post("/",AddDish)
 
 module.exports = router;

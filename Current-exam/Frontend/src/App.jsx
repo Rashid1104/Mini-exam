@@ -12,6 +12,7 @@ import Dashboard from './pages/Admin/Dashboard'
 import Add from './pages/Admin/Add'
 import Details from './pages/client/Details'
 import TableArrivalls from './pages/Admin/Table'
+import Basket from './pages/client/Basket'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
           <Route index element={<Home />} />
           <Route path='favorite' element={<Favorite />} />
           <Route path='shop' element={<Shop />} />
+          <Route path='basket' element={<Basket />} />
           <Route path='details/:id' element={<Details />} />
           <Route path='shop/details/:id' element={<Details />} />
           <Route path='favorite/details/:id' element={<Details />} />

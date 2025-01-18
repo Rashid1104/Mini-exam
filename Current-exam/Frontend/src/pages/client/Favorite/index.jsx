@@ -5,11 +5,10 @@ import { IoMdInformationCircle } from "react-icons/io";
 import { FaHeart } from "react-icons/fa";
 
 const Favorite = () => {
-  const { favorite, toggleFav } = useContext(FavContext)
+  const { favorite } = useContext(FavContext)
   console.log(favorite);
 
   const { ToggleFav, ClearAllFav } = useContext(FavContext)
-
 
   return (
     <div>
@@ -25,7 +24,7 @@ const Favorite = () => {
               </div>
               <div className="icons">
                 <button className='btn'><NavLink to={`details/${a._id}`}><IoMdInformationCircle /></NavLink></button>
-                <button className='btn'><FaHeart onClick={() => { ToggleFav(a) }} /></button>
+                <button><FaHeart onClick={() => { ToggleFav(a) }} /></button>
               </div>
             </div>
 

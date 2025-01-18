@@ -28,6 +28,7 @@ const Home = () => {
   useEffect(() => {
     getArivalls()
   }, [])
+
   return (
     <div>
       <div className="logo-img">
@@ -41,6 +42,18 @@ const Home = () => {
 
         </div>
       </div>
+    {/* <div className="container">
+      <div className="row">
+        <div className="col-6">
+        <p>Spring / Summer Collection 2017</p>
+            <h1 className='h1-texts'>Get up to 30% Off New Arrivals</h1>
+            <button className='shop-btn'>SHOP NOW</button>
+        </div>
+        <div className="col-6">
+        <img src="https://preview.colorlib.com/theme/timezone/assets/img/hero/watch.png.webp" alt="" />
+        </div>
+      </div>
+    </div> */}
       <div className="sec-2">
         <div className="container">
           <div className="row agusha">

@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaInfo } from "react-icons/fa6";
 import "./index.css"
 import { NavLink } from 'react-router-dom';
+import { FaHeart } from "react-icons/fa";
 
 const Home = () => {
   const [dishes, setDishes] = useState([])
@@ -41,7 +42,13 @@ const Home = () => {
                 </div>
                 <div className="price">
                  <h2> ${d.price}</h2>
-                 <NavLink to={`details/${d._id}`}><FaInfo/></NavLink>
+                
+                </div>
+                <div className="icons">
+                <div className="icons">
+                <button className='btn'><NavLink to={`details/${d._id}`}><FaInfo/></NavLink></button>
+                <button className='btn'><FaHeart /></button>
+                </div>
                 </div>
               </div>
             })
