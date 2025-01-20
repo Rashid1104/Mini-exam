@@ -10,3 +10,15 @@
     height: 80px;
     z-index: 1000;
 }
+@media (max-width: 480px) {
+    .other .btn{
+     font-size: 9px;
+     display: none;
+    }
+    .other .btn-cart{
+     font-size: 13px;
+    }
+    .logo-nav{
+     font-size: 12px;
+    }
+ }

@@ -28,15 +28,17 @@ const Details = () => {
 
     return (
         <div>
-            <Helmet>
-                <title>Nmaew</title>
-
+            {arivall && (
+                <Helmet>
+              <title>{arivall.name}</title>
             </Helmet>
-            {
+            )}
+           <div className="container">
+           {
                 arivall && (
                     <div className="row details">
                         <div className="col-6">
-                            <img src={arivall.img} alt={arivall.name} width={500} />
+                            <img src={arivall.img} alt={arivall.name} width={400} />
                         </div>
                         <div className="col-6 right">
                             <h2>{arivall.name}</h2>
@@ -46,6 +48,7 @@ const Details = () => {
                     </div>
                 )
             }
+           </div>
         </div>
     )
 }

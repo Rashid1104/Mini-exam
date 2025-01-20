@@ -24,7 +24,10 @@ const Favorite = () => {
               </div>
               <div className="icons">
                 <button className='btn'><NavLink to={`details/${a._id}`}><IoMdInformationCircle /></NavLink></button>
-                <button><FaHeart onClick={() => { ToggleFav(a) }} /></button>
+                <button
+                className='btn'
+                style={{ color: favorite.find((q) => q._id === a._id) ? "#ff4d4f" : "#8c8c8c" }}
+                ><FaHeart onClick={() => { ToggleFav(a) }} /></button>
               </div>
             </div>
 

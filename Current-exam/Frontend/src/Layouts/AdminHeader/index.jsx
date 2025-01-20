@@ -15,13 +15,13 @@ const AdminHeader = () => {
                 <nav>
                     <ul>
                         <li>
-                            <NavLink to={"/admin/"}>Dashboard</NavLink>
+                            <NavLink to={"/admin/"} className={"logo-nav"}>Dashboard</NavLink>
                         </li>
                         <li>
-                            <NavLink to={"/admin/add"}>ADD Arivall</NavLink>
+                            <NavLink to={"/admin/add"} className={"logo-nav"}>ADD Arivall</NavLink>
                         </li>
                         <li>
-                            <NavLink to={"/admin/table"}>Table</NavLink>
+                            <NavLink to={"/admin/table"} className={"logo-nav"}>Table</NavLink>
                         </li>
                     </ul>
                 </nav>

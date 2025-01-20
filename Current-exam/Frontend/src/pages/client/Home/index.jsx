@@ -11,7 +11,7 @@ const Home = () => {
   const [arivalls, setArivalls] = useState([])
   const DB_URL = "http://localhost:8080"
 
-  const { ToggleFav } = useContext(FavContext)
+  const { ToggleFav,favorite } = useContext(FavContext)
 
   const getArivalls = async () => {
     try {
@@ -57,16 +57,16 @@ const Home = () => {
       <div className="sec-2">
         <div className="container">
           <div className="row agusha">
-            <div className="col-md-4 col-6 background-img-1" >
+            <div className="col-sm-3 col-6 background-img-1" >
               <button className='button'><h1>WOMEN'S</h1></button>
 
 
             </div>
-            <div className="col-md-4 col-6 background-img-2">
+            <div className="col-sm-4 col-6 background-img-2">
               <button className='button'><h1>ACCESSORIES'S</h1>
               </button>
             </div>
-            <div className="col-md-4 col-6 background-img-3">
+            <div className="col-sm-3 col-6 background-img-3">
               <button className='button'><h1>MENS'S</h1></button>
             </div>
           </div>
@@ -76,7 +76,7 @@ const Home = () => {
       <div className="container">
         <div className="row arivalls-row">
           {arivalls.length > 0 && arivalls.map((a) => {
-            return <div className="col-2 arivalls" key={a._id}>
+            return <div className="col-sm-6 col-md-2 arivalls" key={a._id}>
               <img src={a.img} alt={a.name} width={200} />
               <div className="texts">
                 <p className='name'>{a.name}</p>
@@ -86,6 +86,8 @@ const Home = () => {
                 <button className='btn'><NavLink to={`details/${a._id}`}><IoMdInformationCircle /></NavLink></button>
                 <button
                   className='btn'
+                  style={{color: favorite.find((q)=>q._id === a._id) ? "red" : ""}}
+
                   onClick={() => { ToggleFav(a) }}
                 >
                   <FaHeart />
@@ -103,13 +105,13 @@ const Home = () => {
         <div className="container">
           <h1 className="texts">Latest Blogs</h1>
           <div className="row">
-            <div className="col-md-4 col-6" >
+            <div className="col-md-4 col-md-4 div-img" >
               <img src="https://preview.colorlib.com/theme/coloshop/images/blog_1.jpg.webp" alt="" />
             </div>
-            <div className="col-md-4 col-6">
+            <div className="col-md-4 col-md-4 div-img">
               <img src="https://preview.colorlib.com/theme/coloshop/images/blog_2.jpg.webp" alt="" />
             </div>
-            <div className="col-md-4 col-6">
+            <div className="col-md-4 col-md-4 div-img">
               <img src="https://preview.colorlib.com/theme/coloshop/images/blog_3.jpg.webp" alt="" />
             </div>
           </div>

@@ -32,7 +32,10 @@
 }
 
 .agusha {
-    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
 }
 
 .button {
@@ -66,9 +69,9 @@
 
 .background-img-3 {
     background-image: url('https://preview.colorlib.com/theme/coloshop/images/banner_3.jpg.webp');
-    background-size: cover;
-    background-position: center;
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -79,4 +82,48 @@
 .texts {
     text-align: center;
     margin: 80px 0;
+}
+@media (max-width: 1024px) {
+    .logo-img {
+        height: 500px;
+    }
+
+    .h1-texts {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-img {
+        height: 250px;
+    }
+
+    .h1-texts {
+        font-size: 2rem;
+    }
+    .shop-items p{
+        font-size: 10px;
+    }
+    .shop-items .h1-texts{
+        font-size: 1.5rem;
+    }
+    .shop-items .shop-btn{
+        padding: 4px 12px;
+        font-size: 10px;
+    border: none;
+    color: #fff;
+    }
+}
+.div-img{
+
+    overflow: hidden;
+  display: inline-block;
+  
+}
+.div-img img{
+    width: 100%;
+    transition: all 0.5s;
+}
+.div-img:hover img{
+transform: scale(1.1);
 }

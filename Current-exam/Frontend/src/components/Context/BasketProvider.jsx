@@ -1,41 +1,90 @@
 import React, { createContext, useContext, useState, useEffect } from 'react'
+import Swal from 'sweetalert2'
 
-export const BasketContext = createContext()
+export const BasketContext = createContext([])
 
 const BasketProvider = ({ children }) => {
   const [basket, setBasket] = useState([])
 
-useEffect(() => {
-  const storedBasket = JSON.parse(localStorage.getItem('basket')) || [];
-  setBasket(storedBasket)
-
-}, [])
-
-
-
   const AddToBasket = (arivall)  =>{
-    const updateBasket = [...basket];
-    const idx = updateBasket.findIndex((q)=> q._id === arivall._id)
+    setBasket((bas)=>{
+      const idx = basket.findIndex((q)=>q._id === arivall._id)
 
-    if (idx >= 0) {
-      updateBasket[idx].quantity += 1;
-      
-    }else{
-      updateBasket.push({...arivall,quantity: 0})
-    }
+      if (idx === -1) {
+        return [...bas,{...arivall,quantity: 1}]
+      }
+      bas[idx].quantity++
+      return [...bas]
+    })
+
+console.log(basket);
 
   }
-  const removeFromBasket = (id) =>{
-    setBasket((item)=> item.filter((q)=>q._id !== id))
+  const removeFromBasket = (arivall) =>{
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+        setBasket((item)=> item.filter((q)=>q._id !== arivall._id))
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success"
+        });
+      }
+    });   
+  
   }
-  const IncBasket = (id) =>{
-    setBasket((item)=> item.filter((q)=>q._id === id ? {...q,quantity: q.quantity + 1}: q))
+  const IncBasket = (arivall) =>{
+    setBasket((item)=>{
+      const found = item.find((q)=>q._id === arivall._id)
+      found.quantity++
+      return [...item]
+    })
   }
-  const DecrBasket = (id) =>{
-    setBasket((item)=> item.filter((q)=>(q._id === id && item.quantity > 1) ? {...q,quantity: q.quantity - 1}: q))
+  const DecrBasket = (arivall) =>{
+    setBasket((item)=>{
+      const found = item.find((q)=>q._id === arivall._id)
+      found.quantity--
+      if (found.quantity === 0) {
+        return item.filter((q)=>q._id !== arivall._id)
+      }
+      return [...item]
+    })
+  }
+
+  const ClearBasket =() =>{
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!"
+    }).then(async (result) => {
+      if (result.isConfirmed) {
+      setBasket([])
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success"
+        });
+      }
+    });   
+  }
+
+  const calPrice = () =>{
+    return basket.reduce((sum,curr)=> sum + curr.price * curr.quantity,0).toFixed(2)
   }
   return (
-    <BasketContext.Provider value={{basket,AddToBasket,removeFromBasket,IncBasket,DecrBasket}}>{children}</BasketContext.Provider>
+    <BasketContext.Provider value={{basket,AddToBasket,removeFromBasket,IncBasket,DecrBasket,ClearBasket,calPrice}}>{children}</BasketContext.Provider>
   )
 }
 

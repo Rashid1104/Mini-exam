@@ -1,0 +1,11 @@
+.img img:hover{
+transform: scale(1.15);
+}
+.img img{
+    transition: all 0.5s;
+    filter: brightness(90%);
+}
+.img{
+  overflow: hidden;
+  display: inline-block;
+}

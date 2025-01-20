@@ -5,13 +5,17 @@ import App from './App.jsx'
 import { BrowserRouter } from 'react-router-dom'
 import FavProvider from './components/Context/FavProvider.jsx'
 import { HelmetProvider } from 'react-helmet-async';
+import BasketProvider from './components/Context/BasketProvider.jsx'
 
 createRoot(document.getElementById('root')).render(
     <BrowserRouter >
         <FavProvider>
-            <HelmetProvider>
+            <BasketProvider>
+                 <HelmetProvider>
                 <App />
             </HelmetProvider>
+            </BasketProvider>
+           
         </FavProvider>
     </BrowserRouter>
 )

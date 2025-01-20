@@ -38,19 +38,31 @@ const Add = () => {
           }}
         >
           {({ errors, touched }) => (
+          <div className="container">
+            <div className="row">
             <Form>
-              <Field name="img" />
+             <div className="col-sm-4">
+             <Field name="img" />
               {errors.img && touched.img ? (
                 <div>{errors.img}</div>
               ) : null}
-              <Field name="name" />
+             </div>
+             <div className="col-sm-4">
+             <Field name="name" />
               {errors.name && touched.name ? (
                 <div>{errors.name}</div>
               ) : null}
-              <Field name="price" type="number" />
-              {errors.price && touched.price ? <div>{errors.price}</div> : null}
-              <button type="submit" className='btn'>Submit</button>
+             </div>
+            <div className="col-sm-4">
+            <Field name="price" type="number" />
+            {errors.price && touched.price ? <div>{errors.price}</div> : null}
+            </div>
+           <div className="col-sm-4">
+           <button type="submit" className='btn'>Submit</button>
+           </div>
             </Form>
+            </div>
+          </div>
           )}
         </Formik>
       </div>

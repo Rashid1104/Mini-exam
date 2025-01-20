@@ -5,7 +5,9 @@ import { IoMdInformationCircle } from "react-icons/io";
 import { FaHeart } from "react-icons/fa";
 import "./index.css"
 import { NavLink } from 'react-router-dom';
+import { IoBagHandle } from "react-icons/io5";
 import { FavContext } from '../../../components/Context/FavProvider';
+import { BasketContext } from '../../../components/Context/BasketProvider';
 
 const Shop = () => {
     const [arivalls, setArivalls] = useState([])
@@ -13,7 +15,8 @@ const Shop = () => {
     const [searchQuery, setSearchQuery] = useState("")
     const DB_URL = "http://localhost:8080"
 
-    const { ToggleFav } = useContext(FavContext)
+    const { ToggleFav,favorite } = useContext(FavContext)
+    const {AddToBasket} = useContext(BasketContext)
 
     const getArivalls = async () => {
         try {
@@ -47,7 +50,7 @@ const Shop = () => {
 
     return (
         <div>
-            <div className="containers">
+            <div className="container">
                <div className="row">
                 <div className="col-4">
                     <input type="search" placeholder='Search...' className = "search" onChange={(e) => setSearchQuery(e.target.value)}/>
@@ -64,7 +67,7 @@ const Shop = () => {
                 <div className="row arivalls-row">
                     {arivalls.length > 0 && filteredArivalls.map((a) => {
                         return <div className="col-2 arivalls" key={a._id}>
-                            <img src={a.img} alt={a.name} width={200} />
+                            <img src={a.img} alt={a.name} width={180} />
                             <div className="texts">
                                 <p className='name'>{a.name}</p>
                                 <span>{a.oldPrice ? <span className='old-price'>${a.oldPrice}</span> : ""} ${a.price}</span>
@@ -73,10 +76,15 @@ const Shop = () => {
                                 <button className='btn'><NavLink to={`details/${a._id}`}><IoMdInformationCircle /></NavLink></button>
                                 <button
                                     className='btn'
+                                    style={{ color: favorite.find((q) => q._id === a._id) ? "#ff4d4f" : "#8c8c8c" }}
                                     onClick={() => { ToggleFav(a) }}
                                 >
                                     <FaHeart />
                                 </button>
+                                <button 
+                                 className='btn'
+                                onClick={()=>{AddToBasket(a)}}
+                                ><IoBagHandle/></button>
                             </div>
                         </div>
 
