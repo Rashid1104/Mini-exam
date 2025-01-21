@@ -1,16 +1,22 @@
 .img-logo {
     background-image: url("https://preview.colorlib.com/theme/winter/img/banner_img.png.webp");
-    width: 100%;
-    height: 700px;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    width: 100%;
+    height: 700px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
+.img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 .h1-text {
+    text-align: left;
     font-size: 6rem;
 }
 
@@ -30,7 +36,16 @@
     background-color: #ffffff;
     color: #2F7DFC;
 }
-
+.gugu{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    /* gap: 1rem; */
+    padding: 30px 20px;
+    /* padding: 40px 20px; */
+}
 .img-1 {
     background-image: url("https://preview.colorlib.com/theme/winter/img/feature_1.png.webp");
 }
@@ -53,20 +68,26 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    display: inline-block;
+    transition: transform 0.5s, box-shadow 0.5s;
+    /* overflow: hidden;
+    display: inline-block; */
 }
 
 .in-img {
-    background-color: #2F7DFC;
+    background-color: #ffffff;
+   
     padding: 12px 28px;
     border: none;
-    color: #fff;
+    color: #000000;
     transition: all 0.8s;
+}
+.in-img h1{
+    font-size: 1.4rem;
 }
 
 .in-img:hover {
-    background-color: #ffffff;
-    color: #2F7DFC;
+    background-color: #2F7DFC;
+    color: #ffffff;
 }
 
 .img-all:hover .img-1 {
@@ -76,10 +97,34 @@
 
 .sec-2 {
     margin: 20px 0;
-    max-width: 1800px;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 .sec-3 {
+    padding: 20px 0;
     background-color: #F4F4F4;
+}
+.texts{
+    text-align: center;
+}
+
+.h2-cart{
+    font-size: 1rem;
+}
+
+@media (max-width: 480px){
+    .img-logo {
+        height: 250px;
+     
+    }
+    .p-text{
+        font-size: 0.8rem;
+    }
+    .h1-text{
+        font-size: 1.5rem;
+    }
+    .btn-shop-now{
+        padding: 6px 10px;
+    }
 }

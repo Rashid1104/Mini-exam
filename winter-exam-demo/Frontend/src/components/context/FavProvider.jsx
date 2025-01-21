@@ -15,6 +15,14 @@ const FavProvider = ({ children }) => {
     }
 
     const ClearAll = () => {
+        if (favorite.length === 0) {
+            Swal.fire({
+                title: "Empty",
+                text: "Your Favorite list is Empty!!!!",
+                icon: "question"
+              });
+              return
+        }
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -35,6 +43,7 @@ const FavProvider = ({ children }) => {
         });
 
     }
+
     return (
         <FavContext.Provider value={{ favorite, ToggleFav, ClearAll }}>{children}</FavContext.Provider>
     )

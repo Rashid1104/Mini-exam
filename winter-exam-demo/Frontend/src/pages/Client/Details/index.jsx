@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { NavLink, useParams } from 'react-router-dom'
+import axios from "axios"
+import "./index.css"
 
 const Details = () => {
     const DB_URL = "http://localhost:8080"
@@ -8,7 +10,7 @@ const Details = () => {
 
     const getArrive = async () => {
         try {
-            const res = await axios(`${DB_URL}/arrives/${id}`)
+            const res = await axios.get(`${DB_URL}/arrives/${id}`)
             setArrive(res.data.arrive)
             console.log(res.data.arrive)
         } catch (error) {
@@ -34,9 +36,11 @@ const Details = () => {
                         </div>
                         <div className="col-6">
                             <p>{arrive.brand}</p>
-                            <h2>{arrive.name}</h2>
-                            <span>$ {arrive.price}</span>
-                            <button><NavLink to={"/"}>Go Back</NavLink></button>
+                            <h2 className='nigga'>{arrive.name}</h2>
+                            <h3 className='price-details'>Price: ${arrive.price}</h3>
+                            <div>
+                            <button className='go-home'><NavLink to={"/"}>Go Back</NavLink></button>
+                            </div>
                         </div>
                     </div>
                 )}

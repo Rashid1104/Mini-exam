@@ -3,3 +3,26 @@
     justify-content: center;
     align-items: center;
 }
+.go-home{
+padding: 10px 24px;
+background-color: #2F7DFC;
+border: none;
+transition: all 0.6s;
+}
+.go-home:hover{
+    background-color: #ffffff;
+    }
+    .go-home:hover a{
+        color: #2F7DFC; 
+        }
+.nigga{
+    font-size: 3rem;
+}
+.go-home a{
+    text-decoration: none;
+  color: rgb(255, 255, 255);  
+  font-size: 1.2rem;
+}
+.price-details{
+    padding: 10px 0;
+}
